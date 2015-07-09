@@ -1,5 +1,6 @@
 ## FlatImagePicker
-A custom view, with Flat design, that lets you choose between gallery and camera from UIImagePickerController.
+A custom view for iOS developers that lets you choose between gallery and camera from UIImagePickerController.
+Flat design. Icons by https://icons8.com.
 
 #### How to
 Add the following delegate to your viewcontroller:
