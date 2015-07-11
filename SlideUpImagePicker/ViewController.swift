@@ -26,7 +26,7 @@ class ViewController: UIViewController, FlatImagePickerViewControllerDelegate {
     
     func flatPicker() {
 
-        println("1")
+        println("Tap")
         
         var flat = FlatImagePickerViewController(shouldSaveImage: false)
         flat.delegate = self
@@ -38,5 +38,8 @@ class ViewController: UIViewController, FlatImagePickerViewControllerDelegate {
         self.image?.image = image
     }
     
+    func FlatimagePickerViewControllerDidCancel(imagePicker: FlatImagePickerViewController) {
+        println("cancel")
+    }
 }
 
