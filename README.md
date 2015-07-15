@@ -8,7 +8,7 @@ Add the following delegate to your viewcontroller:
 ```swift
 class ViewController: UIViewController, FlatImagePickerViewControllerDelegate
 ```
-and call it inside a action:
+and call it inside an action:
 ```swift
   var flat = FlatImagePickerViewController(shouldSaveImage: false)
   flat.delegate = self
@@ -20,3 +20,7 @@ Use this protocol to save the selected image:
 ```swift
   func FlatimagePickerViewController(imagePicker:FlatImagePickerViewController, didSelectImage image: UIImage)
 ```
+and this one to any other control you need to have over de component:
+```swift
+  func FlatimagePickerViewControllerDidCancel(imagePicker:FlatImagePickerViewController)
+  ```
