@@ -117,11 +117,9 @@ class FlatImagePickerViewController: UIViewController, UIImagePickerControllerDe
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
         self.coverPicker.dismissViewControllerAnimated(true, completion: nil)
-        
         self.cancelPressed()
-        
-        self.delegate?.FlatimagePickerViewController(self, didSelectImage: image)
         
         if self.shouldSaveImage
         {
@@ -131,6 +129,7 @@ class FlatImagePickerViewController: UIViewController, UIImagePickerControllerDe
             }
         }
         
+        self.delegate?.FlatimagePickerViewController(self, didSelectImage: image)
     }
     
     func cancelPressed() {
@@ -159,5 +158,16 @@ class FlatImagePickerViewController: UIViewController, UIImagePickerControllerDe
                 self.dismissViewControllerAnimated(false, completion: nil)
         })
     }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        let touch = touches.first as! UITouch
+        let point = touch.locationInView(self.cinza)
+        
+        if self.cinza.pointInside(point, withEvent: event) == false {
+            self.cancelPressed()
+        }
+    }
+
 }
 
