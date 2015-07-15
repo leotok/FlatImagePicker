@@ -20,7 +20,7 @@ Use this protocol to save the selected image:
 ```swift
   func FlatimagePickerViewController(imagePicker:FlatImagePickerViewController, didSelectImage image: UIImage)
 ```
-and this one to any other control you need to have over de component:
+and this one to know when the cancel button is pressed:
 ```swift
   func FlatimagePickerViewControllerDidCancel(imagePicker:FlatImagePickerViewController)
   ```
